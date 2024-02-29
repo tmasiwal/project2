@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { JWTAuthProvider } from "./components/contexts/JWTAuth";
+import SettingsProvider from "./components/contexts/settingsContext";
+import App from "./App";
+import "nprogress/nprogress.css";
+import "react-quill/dist/quill.snow.css";
+import "simplebar-react/dist/simplebar.min.css";
+import "pure-react-carousel/dist/react-carousel.es.css";
+// import "./__fakeData__";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <SettingsProvider>
+        <JWTAuthProvider>
+          <App />
+        </JWTAuthProvider>
+      </SettingsProvider>
+    </LocalizationProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
