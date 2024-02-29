@@ -21,7 +21,7 @@ Explore the live site: [Project2](https://ukodashboardproject2.netlify.app/)
 To set up the project locally, follow these steps:
 
 
-## 1. For Frontend:
+## 1. Clone the repository:
 
 ```bash
 https://github.com/tmasiwal/project2.git
